@@ -1,0 +1,48 @@
+# Global
+node_modules/
+dist/
+build/
+coverage/
+out/
+/.pnp
+.pnp.*
+.next/
+.rpt2_cache/
+.cache/
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+pnpm-error.log*
+
+# Environment files
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS junk
+.DS_Store
+Thumbs.db
+*.pem
+
+# TypeScript
+**/*.tsbuildinfo
+next-env.d.ts
+
+# Ignore tarballs from npm pack
+*.tgz
+
+# Allow yarn lock file
+!yarn.lock
