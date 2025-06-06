@@ -7,11 +7,23 @@ import Document, {
   NextScript,
 } from 'next/document';
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
+import ConfigStyled from '@/styles/Config.styled';
 
 function MyDocument() {
   return (
     <Html lang="en">
-      <Head />
+      <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href={`https://fonts.googleapis.com/css2?family=${ConfigStyled.FONT.DEFAULT?.replace(' ', '+')}:wght@400;500;600;700&display=swap`}
+        />
+      </Head>
       <body>
         <StyleSheetManager disableCSSOMInjection={true}>
           <Main />

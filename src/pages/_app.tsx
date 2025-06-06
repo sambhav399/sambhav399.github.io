@@ -1,11 +1,30 @@
 import type { AppProps } from 'next/app';
+import { DefaultTheme, ThemeProvider } from 'styled-components';
+import Layout from '@/components/Layout';
+import PageHead from '@/components/PageHead';
+import GlobalStyled from '@/styles/Global.styled';
+import LenisStyled from '@/styles/Lenis.styled';
+import ThemeStyled from '@/styles/Theme.styled';
 
 function RenderComponent({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <ThemeProvider theme={ThemeStyled() as DefaultTheme}>
+      <GlobalStyled />
+      <LenisStyled />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
+  );
 }
 
 function MyApp(props: AppProps) {
-  return <RenderComponent {...props} />;
+  return (
+    <>
+      <PageHead />
+      <RenderComponent {...props} />
+    </>
+  );
 }
 
 export default MyApp;
