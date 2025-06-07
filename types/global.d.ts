@@ -1,3 +1,7 @@
+interface MixpanelWithLoaded extends Omit<typeof mixpanel, '__loaded'> {
+  __loaded?: boolean;
+}
+
 interface StyledThemeFont {
   DEFAULT: string;
   LEAD: string;

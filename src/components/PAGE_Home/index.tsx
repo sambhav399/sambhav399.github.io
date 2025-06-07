@@ -1,6 +1,7 @@
 import { cloneElement } from 'react';
 import { styled } from 'styled-components';
 import config from '@/config';
+import { TrackEvent } from '@/config/mixpanel';
 
 function PAGE_Home() {
   const CONTACT_DATA = config.PORTFOLIO_DATA.DATA_CONTACT;
@@ -21,6 +22,13 @@ function PAGE_Home() {
           href="https://www.bold.com/"
           target="_blank"
           aria-label="bold"
+          onClick={() =>
+            TrackEvent('portfolio', {
+              Action: 'clicked',
+              'Click Option': 'bold technologies pvt. ltd.',
+              'Click URL': 'https://www.bold.com/',
+            })
+          }
         >
           BOLD
         </a>
@@ -34,6 +42,13 @@ function PAGE_Home() {
           href="https://quekia.netlify.app/"
           target="_blank"
           aria-label="quekia"
+          onClick={() =>
+            TrackEvent('portfolio', {
+              Action: 'clicked',
+              'Click Option': 'quekia',
+              'Click URL': 'https://quekia.netlify.app/',
+            })
+          }
         >
           QUEKIA
         </a>
@@ -47,6 +62,13 @@ function PAGE_Home() {
               target="_blank"
               className="contact"
               aria-label={config.PORTFOLIO_TITLE + 's ' + contact.label}
+              onClick={() =>
+                TrackEvent('portfolio', {
+                  Action: 'clicked',
+                  'Click Option': contact.label,
+                  'Click URL': contact.link,
+                })
+              }
             >
               {cloneElement(contact.icon, {
                 width: 24,
