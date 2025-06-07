@@ -1,5 +1,4 @@
-import { css, CSSObject } from 'styled-components';
-import Device, { Size } from './Device.styled';
+import { CSSObject } from 'styled-components';
 
 export const lineClamp = (n?: number): CSSObject => ({
   overflow: 'hidden',
@@ -16,29 +15,3 @@ export function getFont(props: PROPS_StyledTheme): StyledThemeFont {
 export function getColor(props: PROPS_StyledTheme): StyledThemeColor {
   return props.theme.COLOR;
 }
-
-export const Container = css`
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-
-  ${Device.sm} {
-    max-width: ${Size.sm}px;
-  }
-
-  ${Device.md} {
-    max-width: ${Size.md}px;
-  }
-
-  ${Device.lg} {
-    max-width: ${Size.lg}px;
-  }
-
-  ${Device.xl} {
-    max-width: ${Size.xl}px;
-  }
-
-  ${Device.xxl} {
-    max-width: ${Size.xxl}px;
-  }
-`;

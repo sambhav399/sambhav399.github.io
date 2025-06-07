@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import Device, { Size } from './Device.styled';
 import { getColor, getFont } from './Helper.styled';
 
 export default createGlobalStyle`
@@ -12,6 +11,7 @@ export default createGlobalStyle`
     padding   : 0;
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
+    user-select: none;
   }
 
   html,
@@ -48,6 +48,7 @@ export default createGlobalStyle`
   input,
   textarea,
   select,
+  a,
   [tabindex]:not([tabindex="-1"]) {
     &:focus {
       outline: 2px solid ${p => getColor(p).THEME};
@@ -60,30 +61,7 @@ export default createGlobalStyle`
     }
   }
 
-  .container{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-
-    ${Device.sm} {
-        max-width: ${Size.sm}px;
-    }
-
-    ${Device.md} {
-        max-width: ${Size.md}px;
-    }
-
-    ${Device.lg} {
-        max-width: ${Size.lg}px;
-    }
-
-    ${Device.xl} {
-        max-width: ${Size.xl}px;
-    }
-
-    ${Device.xxl} {
-        max-width: ${Size.xxl}px;
-    }
+  a {
+    color: inherit;
   }
 `;

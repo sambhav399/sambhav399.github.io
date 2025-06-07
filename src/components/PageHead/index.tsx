@@ -1,10 +1,10 @@
-import React from 'react';
 import Head from 'next/head';
+import config from '@/config';
 
-const PageHead: React.FC = () => {
-  const href = 'https://sambhav399.github.io/';
-  const title = `Sambhav Sharma - Engineering and Product Management`;
-  const description = `Senior Full Stack Engineer passionate about crafting powerful digital experiences, leading engineering teams and AI-powered projects with robust engineering.`;
+function PageHead() {
+  const href = config.PORTFOLIO_URL;
+  const title = config.PORTFOLIO_TITLE;
+  const description = config.PORTFOLIO_DESCRIPTION;
 
   return (
     <Head>
@@ -14,11 +14,20 @@ const PageHead: React.FC = () => {
       <title>{title}</title>
       <link rel="alternate" href={href} hrefLang="en-us" />
 
+      {/* Favicon Icons */}
+      <link rel="shortcut icon" href="/favicon/favicon.ico" />
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/favicon/apple-touch-icon.png"
+      />
+      <meta name="apple-mobile-web-app-title" content="Sambhav" />
+
       {/* Bot Crawlers */}
       <meta name="robots" content="follow, index" />
 
       {/* Primary Meta Tags */}
-      <meta name="author" content="Sambhav Sharma" />
+      <meta name="author" content={title} />
       <meta name="title" content={title} />
       <meta name="description" content={description} />
 
@@ -36,9 +45,9 @@ const PageHead: React.FC = () => {
       <meta property="twitter:url" content={href} />
       <meta property="twitter:image" content="/sambhav_sharma.png" />
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:creator" content="Sambhav Sharma" />
+      <meta property="twitter:creator" content={title} />
     </Head>
   );
-};
+}
 
 export default PageHead;

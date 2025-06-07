@@ -2,12 +2,16 @@ import * as React from 'react';
 import { Canvas } from '@react-three/fiber';
 import { ReactLenis } from 'lenis/react';
 import dynamic from 'next/dynamic';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 import BGTexture from '@/assets/images/bg_texture.png';
 
-const MousePointer = dynamic(() => import('@/components/Shaders/MousePointer'));
+const MousePointer = dynamic(
+  () => import('@/components/Shaders/MousePointer'),
+  { ssr: false }
+);
 const LiquidBackground = dynamic(
-  () => import('@/components/Shaders/LiquidBackground')
+  () => import('@/components/Shaders/LiquidBackground'),
+  { ssr: false }
 );
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -43,7 +47,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <Styled.BaseTexture />
       <MousePointer />
       <ReactLenis root options={{ autoRaf: false }} ref={refLenis}>
-        <Styled.Layout className="container">{children}</Styled.Layout>
+        <Styled.Layout>{children}</Styled.Layout>
       </ReactLenis>
     </>
   );

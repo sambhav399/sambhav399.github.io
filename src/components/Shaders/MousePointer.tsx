@@ -1,12 +1,12 @@
 'use client';
 
-import * as React from 'react';
+import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { getColor } from '@/styles/Helper.styled';
 
-const MousePointer: React.FC = () => {
-  const secondaryCursor = React.useRef<HTMLSpanElement | null>(null);
-  const positionRef = React.useRef({
+function MousePointer() {
+  const secondaryCursor = useRef<HTMLSpanElement | null>(null);
+  const positionRef = useRef({
     mouseX: 0,
     mouseY: 0,
     destinationX: 0,
@@ -16,7 +16,7 @@ const MousePointer: React.FC = () => {
     key: -1,
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       const { clientX, clientY } = event;
 
@@ -38,7 +38,7 @@ const MousePointer: React.FC = () => {
     };
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const currentPositionRef = positionRef.current;
 
     const followMouse = () => {
@@ -85,7 +85,7 @@ const MousePointer: React.FC = () => {
   }, []);
 
   return <Styled.MousePointer ref={secondaryCursor} />;
-};
+}
 
 export default MousePointer;
 
