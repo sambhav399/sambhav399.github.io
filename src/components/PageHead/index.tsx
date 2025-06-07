@@ -3,14 +3,14 @@ import config from '@/config';
 
 function PageHead() {
   const href = config.PORTFOLIO_URL;
-  const title = config.PORTFOLIO_TITLE;
+  const title = config.PORTFOLIO_TITLE + ' | ' + config.PORTFOLIO_POSITION;
   const description = config.PORTFOLIO_DESCRIPTION;
 
   // Schema.org JSON-LD data as an object
   const schemaData = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: title,
+    name: config.PORTFOLIO_TITLE,
     url: href,
     sameAs: config.PORTFOLIO_DATA.DATA_CONTACT.flatMap(contact => contact.link),
     jobTitle: config.PORTFOLIO_POSITION,
@@ -45,7 +45,7 @@ function PageHead() {
       <link rel="canonical" href={href} />
 
       {/* Primary Meta Tags */}
-      <meta name="author" content={title} />
+      <meta name="author" content={config.PORTFOLIO_TITLE} />
       <meta name="title" content={title} />
       <meta name="description" content={description} />
 
@@ -63,7 +63,7 @@ function PageHead() {
       <meta property="twitter:url" content={href} />
       <meta property="twitter:image" content="/sambhav_sharma.png" />
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:creator" content={title} />
+      <meta property="twitter:creator" content={config.PORTFOLIO_TITLE} />
 
       {/* JSON-LD Structured Data */}
       <script
