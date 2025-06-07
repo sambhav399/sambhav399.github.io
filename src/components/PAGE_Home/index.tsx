@@ -8,12 +8,12 @@ function PAGE_Home() {
   return (
     <Styled.PAGE_Home>
       <p className="pf-greet">Hi, There, I&apos;m</p>
-      <p className="pf-name">{config.PORTFOLIO_TITLE}</p>
-      <p className="pf-desc">
+      <h1 className="pf-name">Sambhav Sharma</h1>
+      <h2 className="pf-desc">
         <span className="pf-lead">Senior Full Stack Engineer</span> passionate
         about crafting powerful digital experiences, leading engineering teams
         and AI-powered projects with robust engineering.
-      </p>
+      </h2>
       <p className="pf-desc">
         Currently working with{' '}
         <a
@@ -87,6 +87,9 @@ const Styled = {
     }
 
     .pf-desc {
+      font-size: 1.2rem;
+      line-height: 1.4;
+      font-weight: 400;
       margin-bottom: 2rem;
     }
 

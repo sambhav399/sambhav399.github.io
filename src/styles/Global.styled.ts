@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import { getColor, getFont } from './Helper.styled';
 import Device from './Device.styled';
+import { getColor, getFont } from './Helper.styled';
 
 export default createGlobalStyle`
   :root{

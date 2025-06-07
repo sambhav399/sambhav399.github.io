@@ -3,6 +3,7 @@ import SVG from '@/assets/SVG';
 export default {
   PORTFOLIO_URL: 'https://sambhav399.github.io/',
   PORTFOLIO_TITLE: 'Sambhav Sharma',
+  PORTFOLIO_POSITION: 'Senior Full Stack Engineer',
   PORTFOLIO_DESCRIPTION:
     'Senior Full Stack Engineer passionate about crafting powerful digital experiences, leading engineering teams and AI-powered projects with robust engineering.',
   PORTFOLIO_DATA: {

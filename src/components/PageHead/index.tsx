@@ -6,6 +6,21 @@ function PageHead() {
   const title = config.PORTFOLIO_TITLE;
   const description = config.PORTFOLIO_DESCRIPTION;
 
+  // Schema.org JSON-LD data as an object
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: title,
+    url: href,
+    sameAs: config.PORTFOLIO_DATA.DATA_CONTACT.flatMap(contact => contact.link),
+    jobTitle: config.PORTFOLIO_POSITION,
+    worksFor: {
+      '@type': 'Organization',
+      name: 'BOLD Technologies Pvt. Ltd.',
+    },
+    description,
+  };
+
   return (
     <Head>
       <meta charSet="utf-8" />
@@ -25,6 +40,9 @@ function PageHead() {
 
       {/* Bot Crawlers */}
       <meta name="robots" content="follow, index" />
+
+      {/* Canonical Link */}
+      <link rel="canonical" href={href} />
 
       {/* Primary Meta Tags */}
       <meta name="author" content={title} />
@@ -46,6 +64,12 @@ function PageHead() {
       <meta property="twitter:image" content="/sambhav_sharma.png" />
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:creator" content={title} />
+
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
     </Head>
   );
 }
