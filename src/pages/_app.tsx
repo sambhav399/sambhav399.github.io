@@ -5,8 +5,14 @@ import PageHead from '@/components/PageHead';
 import GlobalStyled from '@/styles/Global.styled';
 import LenisStyled from '@/styles/Lenis.styled';
 import ThemeStyled from '@/styles/Theme.styled';
+import { useEffect } from 'react';
+import { initMixpanel } from '@/config/mixpanel';
 
 function RenderComponent({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    initMixpanel();
+  }, []);
+
   return (
     <ThemeProvider theme={ThemeStyled() as DefaultTheme}>
       <GlobalStyled />
