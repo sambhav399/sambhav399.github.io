@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import { getColor, getFont } from './Helper.styled';
+import Device from './Device.styled';
 
 export default createGlobalStyle`
   :root{
@@ -23,6 +24,10 @@ export default createGlobalStyle`
     font-family: ${p => getFont(p).DEFAULT};
     background: ${p => getColor(p).BACKGROUND0};
     color: ${p => getColor(p).FOREGROUND0};
+
+    ${Device.below_sm}{
+      font-size: 12px;
+    }
   }
 
   img,
