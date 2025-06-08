@@ -20,6 +20,7 @@ let cachedGeoInfo: GeoInfo | null = null;
 
 export const initMixpanel = () => {
   if (typeof window === 'undefined') return;
+  if (process.env.NEXT_PUBLIC_DEV) return;
 
   if (!MIXPANEL_TOKEN) {
     console.warn('Mixpanel token is missing!');
@@ -89,6 +90,7 @@ export const TrackEvent = async (
   eventProperties: Record<string, any>
 ) => {
   if (typeof window === 'undefined') return;
+  if (process.env.NEXT_PUBLIC_DEV) return;
 
   const geoInfo = await getCachedGeoInfo();
   const eventData = {
