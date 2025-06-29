@@ -36,6 +36,7 @@ pnpm-error.log*
 .DS_Store
 Thumbs.db
 *.pem
+.idea
 
 # TypeScript
 **/*.tsbuildinfo
