@@ -25,6 +25,8 @@ export default createGlobalStyle`
     background: ${p => getColor(p).BACKGROUND0};
     color: ${p => getColor(p).FOREGROUND0};
 
+    font-size: 14px;
+
     ${Device.below_sm}{
       font-size: 12px;
     }

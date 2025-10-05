@@ -39,7 +39,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           position: 'fixed',
           inset: 0,
           pointerEvents: 'none',
-          opacity: 0.15,
+          opacity: 0.1,
         }}
       >
         <LiquidBackground />

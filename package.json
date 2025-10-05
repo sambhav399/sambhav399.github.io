@@ -4,11 +4,11 @@
   "private": true,
   "description": "Sambhav Sharma Portfolio",
   "scripts": {
-    "dev": "yarn build:clean && next dev",
+    "dev": "pnpm build:clean && next dev",
     "build": "next build",
     "start": "next start",
-    "build:clean": "rm -rf .next && yarn lint",
-    "lint": "yarn prettier && next lint --fix",
+    "build:clean": "rm -rf .next && pnpm lint",
+    "lint": "pnpm prettier && next lint --fix",
     "prettier": "prettier src/**/* --write"
   },
   "dependencies": {
