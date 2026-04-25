@@ -1,49 +1,68 @@
-# Global
-node_modules/
-dist/
-build/
-coverage/
-out/
-/.pnp
-.pnp.*
-.next/
-.rpt2_cache/
-.cache/
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+# ==============================================================================
+# Dependencies
+# ==============================================================================
+**/node_modules/
+**/.pnp
+**/.pnp.js
+**/.yarn/*
+!**/.yarn/patches
+!**/.yarn/plugins
+!**/.yarn/releases
+!**/.yarn/sdks
+!**/.yarn/versions
 
+# ==============================================================================
+# Build Outputs
+# ==============================================================================
+**/build/
+**/dist/
+**/.next/
+**/.nuxt/
+**/.cache/
+**/.parcel-cache/
+**/.output/
+**/.vercel/
+**/.netlify/
+**/out/
+
+# ==============================================================================
+# Package Manager Lock Files
+# ==============================================================================
+**/package-lock.json
+**/yarn.lock
+**/pnpm-lock.yaml
+**/.pnpm-store/
+
+# ==============================================================================
+# Environment & Secrets
+# ==============================================================================
+**/.env
+**/.env.local
+**/.env.*.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+
+# ==============================================================================
 # Logs
-logs/
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-pnpm-error.log*
+# ==============================================================================
+**/logs/
+**/*.log
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/pnpm-debug.log*
+**/lerna-debug.log*
 
-# Environment files
-.env
-.env.*
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# OS junk
+# ==============================================================================
+# OS Generated Files
+# ==============================================================================
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
-*.pem
-.idea
-
-# TypeScript
-**/*.tsbuildinfo
-next-env.d.ts
-
-# Ignore tarballs from npm pack
-*.tgz
-
-# Allow yarn lock file
-!yarn.lock
+Desktop.ini
+$RECYCLE.BIN/

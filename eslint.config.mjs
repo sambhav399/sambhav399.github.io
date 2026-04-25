@@ -1,5 +1,6 @@
 import js from '@eslint/js';
 import importPlugin from 'eslint-plugin-import';
+import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import unusedImportsPlugin from 'eslint-plugin-unused-imports';
 import prettier from 'eslint-config-prettier';
@@ -21,6 +22,7 @@ export default [
   ...tsEslintPlugin.configs['flat/recommended'],
   importPlugin.flatConfigs.recommended,
   importPlugin.flatConfigs.typescript,
+  reactPlugin.configs.flat.recommended,
   prettier,
   {
     files: ['**/*.{js,mjs,cjs,jsx,ts,tsx}'],
@@ -28,6 +30,7 @@ export default [
       parser: tsParser,
     },
     plugins: {
+      react: reactPlugin,
       'react-hooks': reactHooksPlugin,
       'unused-imports': unusedImportsPlugin,
     },
@@ -74,6 +77,7 @@ export default [
       'prefer-spread': 'error',
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'error',
+      'react/no-unknown-property': 'error',
       'sort-imports': [
         'error',
         {

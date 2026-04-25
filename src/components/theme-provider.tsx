@@ -3,7 +3,7 @@
 import * as React from 'react';
 import {
   ThemeProvider as NextThemesProvider,
-  type ThemeProviderProps,
+  type ThemeProviderProps
 } from 'next-themes';
 
 type Props = React.PropsWithChildren<ThemeProviderProps>;

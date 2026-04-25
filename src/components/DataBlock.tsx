@@ -11,7 +11,7 @@ export default function DataBlock({ title, children, id }: DataBlockProps) {
   return (
     <section className="block" id={id}>
       <div className="block-title">
-        <p className="font-lead text-heading-5">{title}</p>
+        <p className="title">{title}</p>
       </div>
       <div className="block-body">{children}</div>
     </section>

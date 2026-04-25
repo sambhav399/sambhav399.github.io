@@ -8,7 +8,7 @@ export default {
       center: true,
       padding: '2rem',
       screens: {
-        lg: '64rem',
+        md: '48rem',
       },
     },
     fontFamily: {
@@ -31,7 +31,7 @@ export default {
       'heading-3': '2rem',
       'heading-4': '1.75rem',
       'heading-5': '1.5rem',
-      'heading-6': '1.125rem',
+      'heading-6': '1.25rem',
       'label-1': '1.125rem',
       'label-2': '1rem',
       'label-3': '0.875rem',
