@@ -18,12 +18,10 @@ export default function ThemeToggle() {
   const checked = resolvedTheme === 'dark';
 
   return (
-    <label className="swap swap-rotate">
-      <input
-        type="checkbox"
-        onChange={() => setTheme(checked ? 'light' : 'dark')}
-        checked={checked}
-      />
-    </label>
+    <input
+      type="checkbox"
+      onChange={() => setTheme(checked ? 'light' : 'dark')}
+      checked={checked}
+    />
   );
 }

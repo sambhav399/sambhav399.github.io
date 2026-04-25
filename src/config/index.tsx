@@ -34,9 +34,5 @@ export default {
         link: 'https://medium.com/@sambhav399/'
       }
     ]
-  },
-  API_URL_GEO_LOCATION: 'https://ipapi.co/json/',
-  STORAGE: {
-    GEO_DATA: 'GEO_DATA'
   }
 };

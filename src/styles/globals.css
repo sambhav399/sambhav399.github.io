@@ -15,6 +15,7 @@
   --color-block-title: var(--block-title);
   --color-select: var(--select);
   --color-hover: var(--hover);
+  --color-muted: var(--muted);
 }
 
 :root {
@@ -25,6 +26,9 @@
   --hover: theme(colors.brand.600);
   --select: theme(colors.brand.100);
   --block-title: theme(colors.brand.500);
+  --muted: theme(colors.theme.500);
+
+  @apply text-[14px] md:text-[16px];
 }
 
 .dark {
@@ -35,6 +39,7 @@
   --hover: theme(colors.brand.300);
   --select: theme(colors.brand.950);
   --block-title: theme(colors.brand.200);
+  --muted: theme(colors.theme.300);
 }
 
 @layer base {
@@ -81,9 +86,6 @@
   body {
     @apply bg-background text-foreground font-default;
   }
-  :root {
-    --scrollbar-size: 5px;
-  }
 
   *,
   *::before,
@@ -92,7 +94,6 @@
     padding: 0;
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
-    /* user-select: none; */
   }
 
   html,
@@ -121,8 +122,20 @@
 }
 
 @layer components {
+  .texture {
+    @apply fixed inset-0 h-full w-full z-0 pointer-events-none opacity-10;
+    background-image: url('../assets/images/bg_texture.png');
+    background-repeat: repeat;
+    background-size: 10rem;
+  }
+
   .layout {
-    @apply container pt-24 pb-12 flex gap-4;
+    @apply container pt-24 z-1 relative;
+
+    .footer {
+      @apply mt-24 py-8 border-t text-body-4 flex flex-col justify-between items-center text-muted;
+      @apply md:flex-row;
+    }
   }
 
   .block {
@@ -153,7 +166,8 @@
     @apply not-last:mb-4;
 
     .experience-header {
-      @apply flex items-center justify-between mb-2 text-heading-6 font-500;
+      @apply flex flex-col items-start justify-between mb-2 text-heading-6 font-500;
+      @apply md:flex-row;
     }
     .experience-summary {
       @apply mb-4;

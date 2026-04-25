@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next';
 import config from '@/config';
 import ThemeProvider from '@/components/theme-provider';
 import '@/styles/globals.css';
+import Layout from '../components/Layout';
 
 const href = config.PORTFOLIO_URL;
 const title = `${config.PORTFOLIO_TITLE} | ${config.PORTFOLIO_POSITION}`;
@@ -74,18 +75,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning>
+      <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
         />
+      </head>
+      <body suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="layout">{children}</div>
+          <Layout>{children}</Layout>
         </ThemeProvider>
       </body>
     </html>
