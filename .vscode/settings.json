@@ -93,6 +93,5 @@
   // Breadcrumbs
   "breadcrumbs.enabled": true,
   // Spell check words
-  "cSpell.words": [
-  ],
+  "cSpell.words": [],
 }
