@@ -163,68 +163,6 @@ export default function Home() {
               editing)
             </li>
           </ul>
-
-          <a href="/research-paper.pdf" target="_blank">
-            Read paper
-          </a>
-        </DataBlock>
-        <DataBlock id="case-study" title="Case Study">
-          <div className="block">
-            <p className="text-heading-6 font-500">
-              AI Personalization System · BOLD
-            </p>
-            <p>Improving user engagement through real-time personalization</p>
-          </div>
-
-          <div className="block">
-            <p className="title">Problem</p>
-            <p>
-              Low user engagement and retention due to generic content delivery
-              across high-traffic platforms.
-            </p>
-          </div>
-
-          <div className="block">
-            <p className="title">Approach</p>
-            <p>
-              Designed a real-time personalization system using event-driven
-              architecture to dynamically adapt user experiences based on
-              behavior.
-            </p>
-          </div>
-
-          <div className="block">
-            <p className="title">Architecture</p>
-            <ul className="data-list">
-              <li>Event ingestion via Kafka for user activity streams</li>
-              <li>Real-time processing and caching using Redis</li>
-              <li>Personalization logic layer for dynamic content decisions</li>
-              <li>A/B experimentation framework for continuous optimization</li>
-            </ul>
-          </div>
-
-          <div className="block">
-            <p className="title">Trade-offs</p>
-            <ul className="data-list">
-              <li>
-                Chose eventual consistency over strict consistency for
-                scalability
-              </li>
-              <li>Balanced latency vs accuracy in real-time recommendations</li>
-              <li>
-                Optimized for system throughput over heavy computation models
-              </li>
-            </ul>
-          </div>
-
-          <div className="block">
-            <p className="title">Impact</p>
-            <ul className="data-list">
-              <li>+22% increase in user retention</li>
-              <li>+30% increase in feature engagement</li>
-              <li>Improved responsiveness of personalization systems</li>
-            </ul>
-          </div>
         </DataBlock>
       </main>
       <Footer />

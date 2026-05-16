@@ -101,7 +101,6 @@
     @apply bg-background text-foreground font-default;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    scroll-behavior: smooth;
     line-height: normal;
   }
 
@@ -122,6 +121,14 @@
 }
 
 @layer components {
+  .cursor-follower {
+    @apply fixed top-0 left-0 z-50 pointer-events-none rounded-full border h-6 w-6;
+    border-color: var(--hover);
+    background: color-mix(in srgb, var(--hover) 16%, transparent);
+    transform: translate(-50%, -50%);
+    will-change: transform;
+  }
+
   .texture {
     @apply fixed inset-0 h-full w-full z-0 pointer-events-none opacity-10;
     background-image: url('../assets/images/bg_texture.png');
@@ -184,5 +191,11 @@
     .contact {
       @apply hover:text-hover;
     }
+  }
+}
+
+@media (pointer: coarse) {
+  .cursor-follower {
+    display: none;
   }
 }

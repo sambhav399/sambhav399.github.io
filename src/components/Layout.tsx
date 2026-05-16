@@ -2,26 +2,22 @@
 
 import * as React from 'react';
 import { ReactLenis } from 'lenis/react';
+import CursorFollower from './CursorFollower';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const refLenis = React.useRef<any>(null);
-
-  React.useEffect(() => {
-    let animationFrameId: number;
-
-    const update = (time: number) => {
-      refLenis.current?.lenis?.raf(time);
-      animationFrameId = requestAnimationFrame(update);
-    };
-
-    animationFrameId = requestAnimationFrame(update);
-
-    return () => cancelAnimationFrame(animationFrameId);
-  }, []);
-
   return (
     <>
-      <ReactLenis root options={{ autoRaf: false }} ref={refLenis}>
+      <ReactLenis
+        root
+        options={{
+          autoRaf: true,
+          smoothWheel: true,
+          syncTouch: true,
+          touchMultiplier: 1.1,
+          lerp: 0.1
+        }}
+      >
+        <CursorFollower />
         <div className="texture"></div>
         <div className="layout">{children}</div>
       </ReactLenis>
